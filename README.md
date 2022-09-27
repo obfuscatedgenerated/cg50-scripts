@@ -1,6 +1,6 @@
 # CG50 Scripts
 
-This repository contains scripts for the [Casio fx-CG50](https://education.casio.co.uk/products/cg50), although most may work on any Python/MicroPython enabled calculator.
+This repository contains scripts designed for the [Casio fx-CG50](https://education.casio.co.uk/products/cg50), although most may work on any Python/MicroPython enabled calculator.
 
 ## Scripts
 
