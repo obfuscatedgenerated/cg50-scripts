@@ -5,14 +5,14 @@ if __name__ == "__main__":
 
     sub = input("Would you like to sub into a and b? (y/N) ").lower() == "y"
 
-    if sub:
+    if sub: # take real integers
         a = int(input("a: "))
         b = int(input("b: "))
-    else:
-        a = "a"
+    else: # fallback to string values
+        a = "a" 
         b = "b"
 
-    n = int(input("n: "))
+    n = int(input("n: ")) # get the power
 
     print()
 
@@ -27,19 +27,19 @@ if __name__ == "__main__":
         not input("Would you like to print each term on a new line? (Y/n) ").lower()
         == "n"
     )
-    preend = "\n+ " if newline else " + "
+    preend = "\n+ " if newline else " + " # pre-generated end string for the print function
 
     print()
 
     for i in range(n + 1):
-        end = preend if i != n else "\n"
+        end = preend if i != n else "\n" # create the end string for the print function, derived from the pre-generated string
         if condense:
             if sub:
-                print(f"[{comb(n, i)}({a})^{n - i}][({b})^{i}]", end=end)
+                print(f"[{comb(n, i)}({a})^{n - i}][({b})^{i}]", end=end) # print the term in the form of [nCr][a^(n - r)][b^r]
             else:
-                print(f"({comb(n, i)}{a}^{n - i})({b}^{i})", end=end)
+                print(f"({comb(n, i)}{a}^{n - i})({b}^{i})", end=end) # print the term in the form of [nCr][(a)^(n - r)][(b)^r]
         else:
-            print(f"{a}^{n - i} * {b}^{i} * {comb(n, i)}", end=end)
+            print(f"{a}^{n - i} * {b}^{i} * {comb(n, i)}", end=end) # print the term in the form of a^(n - r) * b^r * nCr
 
     print()
 
@@ -53,5 +53,5 @@ if __name__ == "__main__":
         if compute:
             result = 0
             for i in range(n + 1):
-                result += comb(n, i) * (a ** (n - i)) * (b ** i)
+                result += comb(n, i) * (a ** (n - i)) * (b ** i) # add the term to the result
             print(f"Result: {result}")
