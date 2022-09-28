@@ -52,8 +52,4 @@ if __name__ == "__main__":
 
         if compute:
             assert type(a) is int and type(b) is int, "a and b must be integers to compute the result. this code should never be reached."
-            #result = 0
-            #for i in range(n + 1):
-            #    result += comb(n, i) * (a ** (n - i)) * (b ** i) # add the term to the result
-            #print(f"Result: {result}")
             print(f"Result: {(a+b) ** n}")
