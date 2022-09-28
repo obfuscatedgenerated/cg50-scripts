@@ -1,5 +1,11 @@
 name: "Minifier"
-on: [pull_request, push]
+on: 
+  pull_request:
+    paths:
+      - './*.py'
+  push:
+    paths:
+      - './*.py'
 jobs:
   minify:
     runs-on: ubuntu-latest
