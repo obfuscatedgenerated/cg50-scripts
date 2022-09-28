@@ -13,4 +13,4 @@ if __name__=='__main__':
 	print()
 	if sub:
 		compute=not input('Would you like to compute the result? (Y/n) ').lower()=='n';print()
-		if compute:print(f"Result: {(a+b)**n}")
+		if compute:assert type(a)is int and type(b)is int,'a and b must be integers to compute the result. this code should never be reached.';print(f"Result: {(a+b)**n}")
