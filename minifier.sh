@@ -4,5 +4,5 @@ cp *.py ./min/
 pyminify ./min/ -i
 
 for f in ./min/*.py; do
-    mv -- "$f" "$f.min.py"
+    mv -- "$f" "${f%.py}.min.py"
 done
