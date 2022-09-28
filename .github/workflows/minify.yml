@@ -19,7 +19,7 @@ jobs:
       - name: Commit files
         run: |
           git config --local user.name "minifier-action"
-          git add ./min
+          git add ./min/
           git commit -m "auto-minify"
       - name: Push changes
         uses: ad-m/github-push-action@master
