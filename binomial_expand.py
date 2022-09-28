@@ -51,7 +51,8 @@ if __name__ == "__main__":
         print()
 
         if compute:
-            result = 0
-            for i in range(n + 1):
-                result += comb(n, i) * (a ** (n - i)) * (b ** i) # add the term to the result
-            print(f"Result: {result}")
+            #result = 0
+            #for i in range(n + 1):
+            #    result += comb(n, i) * (a ** (n - i)) * (b ** i) # add the term to the result
+            #print(f"Result: {result}")
+            print(f"Result: {(a+b) ** n}")
