@@ -10,9 +10,19 @@ jobs:
           python-version: '3.9'
           cache: 'pip' # caching pip dependencies
       - name: Install minifier
-        run: pip install python-minifier
+        run: pip install -r requirements.txt
       - name: Run script file
         run: |
           chmod +x ./minifier.sh
           ./minifier.sh
         shell: bash
+      - name: Commit files
+        run: |
+          git config --local user.name "minifier-action"
+          git add ./min
+          git commit -m "auto-minify"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
