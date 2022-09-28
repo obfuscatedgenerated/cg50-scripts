@@ -2,10 +2,10 @@ name: "Minifier"
 on: 
   pull_request:
     paths:
-      - './*.py'
+      - '*.py'
   push:
     paths:
-      - './*.py'
+      - '*.py'
 jobs:
   minify:
     runs-on: ubuntu-latest
