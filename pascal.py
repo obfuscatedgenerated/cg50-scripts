@@ -1,8 +1,12 @@
 from math import comb
 
+def smart_comb(n, i):
+    if i == 0 or i == n:
+        return 1
+    return comb(n, i)
 
 def line(n): # list comprehension to generate a list of the numbers in a line of Pascal's triangle, with each element being a string
-    return [str(comb(n, k)) for k in range(n + 1)]
+    return [str(smart_comb(n, k)) for k in range(n + 1)]
 
 
 def pascal(n):

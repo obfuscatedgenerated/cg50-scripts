@@ -1,18 +1,38 @@
 from math import comb
 
+def smart_comb(n, i):
+    if i == 0 or i == n:
+        return 1
+    return comb(n, i)
+
 if __name__ == "__main__":
     print("(a + b)^n\n")
 
     sub = input("Would you like to sub into a and b? (y/N) ").lower() == "y"
 
     if sub: # take real integers
-        a = int(input("a: "))
-        b = int(input("b: "))
+        while True:
+            try:
+                a = int(input("a: "))
+                break
+            except ValueError:
+                print("a must be a valid integer")
+        while True:
+            try:
+                b = int(input("b: "))
+                break
+            except ValueError:
+                print("b must be a valid integer")
     else: # fallback to string values
         a = "a" 
         b = "b"
 
-    n = int(input("n: ")) # get the power
+    while True:
+        try:
+            n = int(input("n: ")) # get the power
+            break
+        except ValueError:
+            print("n must be a valid integer")
 
     print()
 
@@ -35,11 +55,11 @@ if __name__ == "__main__":
         end = preend if i != n else "\n" # create the end string for the print function, derived from the pre-generated string
         if condense:
             if sub:
-                print(f"[{comb(n, i)}({a})^{n - i}][({b})^{i}]", end=end) # print the term in the form of [nCr][a^(n - r)][b^r]
+                print(f"[{smart_comb(n, i)}({a})^{n - i}][({b})^{i}]", end=end) # print the term in the form of [nCr][a^(n - r)][b^r]
             else:
-                print(f"({comb(n, i)}{a}^{n - i})({b}^{i})", end=end) # print the term in the form of [nCr][(a)^(n - r)][(b)^r]
+                print(f"({smart_comb(n, i)}{a}^{n - i})({b}^{i})", end=end) # print the term in the form of [nCr][(a)^(n - r)][(b)^r]
         else:
-            print(f"{a}^{n - i} * {b}^{i} * {comb(n, i)}", end=end) # print the term in the form of a^(n - r) * b^r * nCr
+            print(f"{a}^{n - i} * {b}^{i} * {smart_comb(n, i)}", end=end) # print the term in the form of a^(n - r) * b^r * nCr
 
     print()
 
