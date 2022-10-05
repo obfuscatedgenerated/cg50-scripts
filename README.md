@@ -18,4 +18,4 @@ This script uses the binomial expansion theorem to expand a polynomial. You may 
 
 ## The "min" directory
 
-The "min" directory contains the scripts in a minified form. This is useful if you want to use the scripts on a calculator with limited storage, at the expense of readability, ease of editing, and initial load time. All were minified using [dflook's python-minifier](https://github.com/dflook/python-minifier) on default settings. This is done automatically on push via GitHub Actions.
+The "min" directory contains the scripts in a minified form. This is useful if you want to use the scripts on a calculator with limited storage, at the expense of readability, ease of editing, and initial load time. All were minified using [dflook's python-minifier](https://github.com/dflook/python-minifier) on default settings plus rename globals. This is done automatically on push via GitHub Actions.
