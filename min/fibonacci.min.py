@@ -1,4 +1,5 @@
+D=print
 if __name__=='__main__':
-	i=0;j=1;targ=float(input('Target (or type inf):\n'))
-	while targ!=i and i<targ:print(i);nth=i+j;i,j=j,nth
-	print(i);print(f"{targ} in sequence: {i==targ}")
+	A=0;C=1;B=float(input('Target (or type inf):\n'))
+	while B!=A and A<B:D(A);E=A+C;A,C=C,E
+	D(A);D(f"{B} in sequence: {A==B}")

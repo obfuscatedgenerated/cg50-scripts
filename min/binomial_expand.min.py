@@ -1,28 +1,34 @@
+M='n'
+L=True
+K=ValueError
+G=int
+F=input
+A=print
 from math import comb
-def smart_comb(n,i):
+def H(n,i):
 	if i==0 or i==n:return 1
 	return comb(n,i)
 if __name__=='__main__':
-	print('(a + b)^n\n');sub=input('Would you like to sub into a and b? (y/N) ').lower()=='y'
-	if sub:
-		while True:
-			try:a=int(input('a: '));break
-			except ValueError:print('a must be a valid integer')
-		while True:
-			try:b=int(input('b: '));break
-			except ValueError:print('b must be a valid integer')
-	else:a='a';b='b'
-	while True:
-		try:n=int(input('n: '));break
-		except ValueError:print('n must be a valid integer')
-	print();print(f"Using ({a} + {b})^{n}\n");condense=not input('Would you like to condense down the multiplication? (Y/n) ').lower()=='n';newline=not input('Would you like to print each term on a new line? (Y/n) ').lower()=='n';preend='\n+ 'if newline else' + ';print()
-	for i in range(n+1):
-		end=preend if i!=n else'\n'
-		if condense:
-			if sub:print(f"[{smart_comb(n,i)}({a})^{n-i}][({b})^{i}]",end=end)
-			else:print(f"({smart_comb(n,i)}{a}^{n-i})({b}^{i})",end=end)
-		else:print(f"{a}^{n-i} * {b}^{i} * {smart_comb(n,i)}",end=end)
-	print()
-	if sub:
-		compute=not input('Would you like to compute the result? (Y/n) ').lower()=='n';print()
-		if compute:assert type(a)is int and type(b)is int,'a and b must be integers to compute the result. this code should never be reached.';print(f"Result: {(a+b)**n}")
+	A('(a + b)^n\n');I=F('Would you like to sub into a and b? (y/N) ').lower()=='y'
+	if I:
+		while L:
+			try:D=G(F('a: '));break
+			except K:A('a must be a valid integer')
+		while L:
+			try:E=G(F('b: '));break
+			except K:A('b must be a valid integer')
+	else:D='a';E='b'
+	while L:
+		try:B=G(F('n: '));break
+		except K:A('n must be a valid integer')
+	A();A(f"Using ({D} + {E})^{B}\n");N=not F('Would you like to condense down the multiplication? (Y/n) ').lower()==M;O=not F('Would you like to print each term on a new line? (Y/n) ').lower()==M;P='\n+ 'if O else' + ';A()
+	for C in range(B+1):
+		J=P if C!=B else'\n'
+		if N:
+			if I:A(f"[{H(B,C)}({D})^{B-C}][({E})^{C}]",end=J)
+			else:A(f"({H(B,C)}{D}^{B-C})({E}^{C})",end=J)
+		else:A(f"{D}^{B-C} * {E}^{C} * {H(B,C)}",end=J)
+	A()
+	if I:
+		Q=not F('Would you like to compute the result? (Y/n) ').lower()==M;A()
+		if Q:assert type(D)is G and type(E)is G,'a and b must be integers to compute the result. this code should never be reached.';A(f"Result: {(D+E)**B}")
