@@ -59,5 +59,23 @@ def std_derivative(func, x):
     return derivative_func[func](x)
 
 if __name__ == "__main__":
-    for func in derivative_func:
-        print(f"{funcs_2_names[func]}'(x) = {template_derivative(funcs_2_names[func], '(x)')}")
+    for i, func in enumerate(derivative_func):
+        print(f"{i+1}) {funcs_2_names[func]}'(x) = {template_derivative(funcs_2_names[func], '(x)')}")
+    print()
+
+    while True:
+        option = input("Select a function by number (leave blank to exit): ")
+        if option == "":
+            break
+        try:
+            option = int(option)
+            if option not in range(1, len(derivative_func)+1):
+                raise ValueError
+        except ValueError:
+            print("Invalid option")
+            continue
+        
+        func = list(derivative_func)[option-1]
+
+        x = float(input("Enter a value for x: "))
+        print(f"{funcs_2_names[func]}'({x}) = {std_derivative(func, x)}")
