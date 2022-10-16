@@ -25,3 +25,7 @@ This script lists the standard derivatives and allows you to substitute into the
 ## The "min" directory
 
 The "min" directory contains the scripts in a minified form. This is useful if you want to use the scripts on a calculator with limited storage, at the expense of readability, ease of editing, and initial load time. All were minified using [dflook's python-minifier](https://github.com/dflook/python-minifier) on default settings plus rename globals. This is done automatically on push via GitHub Actions.
+
+## The "archive" directory
+
+The "archive" directory contains scripts in a CPython 3.6 form. These were converted to support MicroPython on the CG50 and are kept for reference. They will not work on the CG50, and will not be maintained.
