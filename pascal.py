@@ -1,4 +1,7 @@
-from math import comb
+from math import factorial
+
+def comb(n, r):
+    return factorial(n) // factorial(r) // factorial(n-r)
 
 def smart_comb(n, i):
     if i == 0 or i == n:
