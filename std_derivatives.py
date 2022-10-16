@@ -40,14 +40,14 @@ derivative_str = {
 
 def template_derivative(func, x):
     templates = {
-        "sin": f"cos{x}",
-        "cos": f"-sin{x}",
-        "tan": f"sec^2{x}",
-        "sec": f"sec{x}tan{x}",
-        "csc": f"-csc{x}cot{x}",
-        "cot": f"-csc^2{x}",
-        "ln": f"1/{x}",
-        "e": f"e^{x}",
+        "sin": "cos"+x,
+        "cos": "-sin"+x,
+        "tan": "sec^2"+x,
+        "sec": "sec"+x+"tan"+x,
+        "csc": "-csc"+x+"cot"+x,
+        "cot": "-csc^2"+x,
+        "ln": "1/"+x,
+        "e": "e^"+x,
     }
 
     return templates[func]
@@ -58,24 +58,26 @@ def soft_derivative(func, x, h=0.0001):
 def std_derivative(func, x):
     return derivative_func[func](x)
 
-if __name__ == "__main__":
-    for i, func in enumerate(derivative_func):
-        print(f"{i+1}) {funcs_2_names[func]}'(x) = {template_derivative(funcs_2_names[func], '(x)')}")
-    print()
 
-    while True:
-        option = input("Select a function by number (leave blank to exit): ")
-        if option == "":
-            break
-        try:
-            option = int(option)
-            if option not in range(1, len(derivative_func)+1):
-                raise ValueError
-        except ValueError:
-            print("Invalid option")
-            continue
-        
-        func = list(derivative_func)[option-1]
+i = 0
+for func in derivative_func:
+    print(str(i+1)+") "+funcs_2_names[func]+"'(x) = "+template_derivative(funcs_2_names[func], '(x)'))
+    i += 1
+print()
 
-        x = float(input("Enter a value for x: "))
-        print(f"{funcs_2_names[func]}'({x}) = {std_derivative(func, x)}")
+while True:
+    option = input("Select a function by number (leave blank to exit): ")
+    if option == "":
+        break
+    try:
+        option = int(option)
+        if option not in range(1, len(derivative_func)+1):
+            raise ValueError
+    except ValueError:
+        print("Invalid option")
+        continue
+    
+    func = list(derivative_func)[option-1]
+
+    x = float(input("Enter a value for x: "))
+    print(funcs_2_names[func]+"'("+str(x)+") = "+str(std_derivative(func, x)))

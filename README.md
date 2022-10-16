@@ -2,6 +2,8 @@
 
 This repository contains scripts designed for the [Casio fx-CG50](https://education.casio.co.uk/products/cg50), although most may work on any Python/MicroPython enabled calculator.
 
+The CG50 uses MicroPython 1.9.4. This means f-strings and other Python 3.6 features are not supported. You can test it here: https://micropython.org/unicorn/ (you may need to replace some stdin with defined values).
+
 ## Scripts
 
 ### [Pascal's Triangle](pascal.py)
